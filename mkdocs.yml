@@ -1,24 +1,153 @@
-site_name: My Docs
+site_name: X-University
 
 theme:
   name: material
+  features: # 功能
+#    - announce.dismiss # 可以叉掉公告的功能
+#    - content.action.edit # 编辑按钮，似乎没啥用
+#    - content.action.view # 查看按钮，似乎没啥用
+    - content.code.annotate # 代码注释，具体不清楚
+    - content.code.copy # 复制代码按钮
+    # - content.code.select # 选择代码按钮
+    # - content.tabs.link # 链接标签
+    - content.tooltips # 不太清楚呢这个
+    - header.autohide # 自动隐藏header
+    - navigation.expand # 默认展开导航栏
+    - navigation.footer # 底部导航栏
+    - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
+    # - navigation.instant # 瞬间加载 - 如果这个开着，那么语言切换后就会跳转至首页，所以我关掉了
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    - navigation.path # 导航路径， 目前好像没啥用
+    # - navigation.prune # 只构建可见的页面
+    - navigation.sections # 导航栏的section
+    - navigation.tabs # 顶级索引被作为tab
+    - navigation.tabs.sticky # tab始终可见
+    - navigation.top # 开启顶部导航栏
+    - navigation.tracking # 导航栏跟踪
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - toc.follow # 目录跟踪-页面右侧的小目录
+    # - toc.integrate # 目录跟踪集成到左侧大目录中
+  palette:
+    - media: "(prefers-color-scheme)" # 主题颜色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)" # 浅色
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # 深色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+repo_url: https://github.com/henani1110/x-university
+
+# 版权信息
+copyright: Copyright &copy; 2025 ~ now | 🚀 Hanxi Chen (henani110)
+
+# Plugins
+plugins:
+  - tags # 标签功能插件
+  - blog # 博客功能插件
+  - search: # 搜索插件
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
+
+
+# 扩展
+markdown_extensions: # markdown extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 nav:
   - 首页: index.md
-#  - 大一上
-#  - 大一下
-#  - 大二上
-#  - 大二下
+#  - 大一上:
+#          - 高等数学A1:
+#          - 线性代数:
+#          - Python程序语言:
+#  - 大一下:
+#          - 大学物理C:
+#          - 大学物理实验C:
+#          - 高等数学A2:
+#          - 数据科学与大数据导论:
+#          - Python程序设计实践:
+#  - 大二上:
+#          - 离散数学:
+#          - 数据库原理:
+#          - 计算机组成原理:
+#          - 概率论与数理统计:
+#          - 程序设计基础（C语言）:
+#  - 大二下:
+#          - 计算机网络:
+#          - 操作系统:
+#          - 数据结构:
+#          - Java语言程序设计:
+#          - 统计学:
+#          - 运筹学:
+#          - 数学模型:
 #  - 大三上:
-#      - 公共课:
-#          - 大学生实用写作:
-#          - 形势与政策5:
-#      - 专业课:
 #          - 数值分析:
 #          - 大数据技术与应用:
 #          - 数据挖掘:
 #          - 数字图像处理(双语课):
 #          - 计算机视觉:
-#  - 大三下
-#  - 大四上
-#  - 大四下
+#  - 大三下:
+#  - 大四上:
+#  - 大四下:
